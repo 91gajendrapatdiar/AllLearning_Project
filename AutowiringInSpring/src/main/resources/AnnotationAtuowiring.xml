@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+    http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+        <context:annotation-config/>
+
+<bean class="org.AtuoWirting.AnnotationAutowiring.Address"  name="address1">
+    <property name="street" value="C21 Mall" />
+    <property name="city" value="USA"/>
+</bean>
+    <bean class="org.AtuoWirting.AnnotationAutowiring.Name" name="name11">
+        <property name="firstname" value="Gajendra" />
+        <property name="middlename" value="Singh"/>
+        <property name="lastname" value="Patidar"/>
+    </bean>
+    <bean class="org.AtuoWirting.AnnotationAutowiring.Person" name="per1" />
+
+</beans>

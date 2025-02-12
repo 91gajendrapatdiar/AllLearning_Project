@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:util = "http://www.springframework.org/schema/util"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+    http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
+    http://www.springframework.org/schema/util
+    http://www.springframework.org/schema/util/spring-util.xsd
+">
+    <!--   we can  use the value as a indivual tag to set the value of the  pojo class`-->
+    <!--  Collection class of the java is used here -->
+
+    <util:list  list-class="java.util.LinkedList" id="linkedfriend" >
+        <value>Gajendra</value>
+        <value>Shyam</value>
+        <value>Om</value>
+        <value>Shivam</value>
+        <value>Aditya</value>
+    </util:list>
+
+<util:map map-class="java.util.HashMap" id="feestructure1">
+    <entry key="python" value=" 64000"></entry>
+    <entry key=" spring Boot" value="10000"/>
+    <entry key = "Machine learning " value="89819"/>
+    <entry key = "Artifical Intelligence" value="99803"/>
+</util:map>
+
+    <!--    Standalone Porperties class which is child of the hashmap-->
+    <util:properties id="dbms">
+        <prop key="driver"> com.mysql.jdbc.Driver</prop>
+        <prop key="username"> Gajendra9109</prop>
+        <prop key="id">9829839</prop>
+        <prop key="age">22</prop>
+  <prop key="Address">Anatkhedi</prop>
+
+    </util:properties>
+
+
+    <bean class="org.Standalone.Collection.Person" name="per1">
+        <property name="friends"  ref="linkedfriend"/>
+        <property name="feestructure" ref="feestructure1"/>
+    </bean>
+
+
+   <bean class="org.Standalone.Collection.Person" name="per2">
+        <property name="friends"  ref="linkedfriend"/>
+       <property name="properties" ref="dbms"/>
+    </bean>
+
+
+
+
+
+
+<!--
+    <bean  id="emp1" class="com.springCollection.Emp" >
+        <property name="name" value=" Gajendra"/>
+
+        <property name="phone">
+            <list>
+                <value>92389239824</value>
+                <value>92389209024</value>
+                <value>92300000524</value>
+                <null/>
+            </list>
+        </property>
+
+
+        <property name="address" >
+            <set>
+                <value>Jhabua</value>
+                <value> Indore</value>
+                <value> Mandsore</value>
+                <null/>
+            </set>
+        </property>
+        <property name="course" >
+            <map>
+                <entry key="java" value= "It take four months"/>
+                <entry key=" python" value=" it take one month only"/>
+            </map>
+        </property>
+
+
+        <property name="props">
+            <props>
+                <prop key="name"> Aditya  jain</prop>
+                <prop key="Address"> America</prop>
+            </props>
+        </property>
+    </bean>
+
+-->
+</beans>
